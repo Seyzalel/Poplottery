@@ -24,9 +24,8 @@ time.sleep(2)
 
 driver.find_element(By.NAME, "userNumber").send_keys("13997779067")
 
-# Ajustado para o novo seletor de senha
-WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='text'][placeholder='Senha']")))
-driver.find_element(By.CSS_SELECTOR, "input[type='text'][placeholder='Senha']").send_keys("17102005seyzalel")
+WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[placeholder='Senha'][type='password']")))
+driver.find_element(By.CSS_SELECTOR, "input[placeholder='Senha'][type='password']").send_keys("17102005seyzalel")
 
 login_button = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.active")))
 actions.move_to_element(login_button).click().perform()
